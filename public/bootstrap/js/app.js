@@ -77,7 +77,7 @@ $(function () {
     function getOrder() {
         $.ajax({
             type: 'get',
-            url : '../../pre-order',
+            url : 'pre-order',
             success:function (msg) {
                 $("#order").html(msg);
             }

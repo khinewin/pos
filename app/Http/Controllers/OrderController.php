@@ -50,5 +50,14 @@ class OrderController extends Controller
             echo "updated";
         }
     }
+    public function postPrintOrder($order_id){
+
+        $orders=Order::where('id', $order_id)->get();
+        $orders->transform(function ($order, $key){
+            $order->cart=unserialize($order->cart);
+            return $order;
+        });
+        return view ('print-order')->with(['orders'=>$orders]);
+    }
 
 }

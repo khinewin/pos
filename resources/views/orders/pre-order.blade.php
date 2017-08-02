@@ -59,7 +59,7 @@
 
                 </div>
                 <div class="col-md-4">
-                    <form method="post" action="#"><button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-print"></span></button></form>
+                    <a href="{{route('print-order', ['order_id'=>$ord->id])}}" target="_blank" class="btn btn-primary"><span class="glyphicon glyphicon-print"></span></a>
                 </div>
             </div>
         </div>

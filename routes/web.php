@@ -48,6 +48,8 @@ Route::group(['prefix'=>'auth'], function (){
 
 Route::group(['middleware'=>'auth'], function () {
 
+Route::group(['prefix'=>'admin'], function(){
+
 
 
     Route::group(['middleware'=>'myRole:Casher|Administrator'], function (){
@@ -68,7 +70,15 @@ Route::group(['middleware'=>'auth'], function () {
             'as'=>'change-cash-status'
         ]);
 
+        Route::get('/print-order/{order_id}',[
+            'uses'=>'OrderController@postPrintOrder',
+            'as'=>'print-order'
+        ]);
+
+
     });
+
+});
 
    Route::group(['middleware'=>'myRole:Waiter'],function (){
        Route::get('/cart-qty',[
