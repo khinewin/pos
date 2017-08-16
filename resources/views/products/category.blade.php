@@ -2,9 +2,9 @@
 
 @section('admin_title')
 
-    Orders | Coffee Lover
+    အမ်ိဴးအစားမ်ား | Boss Store
 
-@stop
+    @stop
 
 @section('admin_content')
 
@@ -16,29 +16,27 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        <a href="{{route('orders')}}"> Orders</a>
-
-                        <span class="pull-right" >{{date('(D)d/m/Y')}}</span>
+                        <a href="{{route('dashboard')}}"> အမ်ိဴးအစားမ်ား</a>
                     </h1>
-
-
                     <ol class="breadcrumb">
                         <li class="active">
-                            <a href="{{route('orders')}}"><i class="fa fa-shopping-cart"></i> Orders</a>
-
+                            <a href="{{route('dashboard')}}"><i class="fa fa-dashboard"></i> အမ်ိဴးအစားမ်ား</a>
                         </li>
-
                     </ol>
                 </div>
             </div>
             <!-- /.row -->
 
-            <div id="order">
+
+
+            <div class="row">
+
 
             </div>
 
+            </div>
         </div>
-
+        <!-- /.container-fluid -->
 
     </div>
     <!-- /#page-wrapper -->
