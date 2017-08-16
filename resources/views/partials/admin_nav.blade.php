@@ -1,5 +1,5 @@
 <!-- Navigation -->
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -8,25 +8,31 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/"><i class="fa fa-coffee"></i> Coffee Lover</a>
+        <a class="navbar-brand" href="/"><i class="fa fa-database"></i> Boss Store</a>
     </div>
     <!-- Top Menu Items -->
     <div class="container-fluid">
         <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{route('sales')}}"><i class="fa fa-shopping-basket"></i> ေရာင္းမည္</a></li>
 
-        <li><a href="{{route('dashboard')}}"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
+        <li><a href="{{route('sales-list')}}"><i class="fa fa-bookmark"></i> အေရာင္းစာရင္းမ်ား</a></li>
+
+        <li><a href="{{route('category')}}"><i class="fa fa-list-alt"></i> အမ်ိဴးအစားမ်ား</a></li>
+        <li>
+            <a href="{{route('products')}}"><i class="fa fa-fw fa-shopping-bag"></i> ﻿ကုန္ပစၥည္းမ်ား</a>
+        </li>
+
+        <li>
+            <a href="{{route('user-manager')}}"><i class="fa fa-fw fa-users"></i> ၀န္ထမ္းမ်ားစီမံရန္</a>
+        </li>
 
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> {{Auth::User()->user_name}} <b class="caret"></b></a>
             <ul class="dropdown-menu">
-                <li>
-                    <a href="{{route('profile')}}"><i class="fa fa-fw fa-user-circle-o"></i> Profile</a>
-                </li>
 
-                <li class="divider"></li>
                 <li>
-                    <a href="{{route('logout')}}"><i class="fa fa-sign-out"></i> Log Out</a>
+                    <a href="{{route('logout')}}"><i class="fa fa-sign-out"></i> ထြက္မည္</a>
                 </li>
             </ul>
         </li>
@@ -36,29 +42,24 @@
     <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav side-nav">
-            <li class="active">
-                <a href="{{route('dashboard')}}"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+            <li><a href="{{route('sales')}}"><i class="fa fa-shopping-basket"></i> ေရာင္းမည္</a></li>
+            <li><a href="{{route('sales-list')}}"><i class="fa fa-bookmark"></i> အေရာင္းစာရင္းမ်ား</a></li>
+            <li>
+                <a href="{{route('category')}}"><i class="fa fa-fw fa-list-alt"></i> အမ်ိဴးအစားမ်ား</a>
+            </li>
+            <li>
+                <a href="{{route('products')}}"><i class="fa fa-fw fa-shopping-bag"></i> ﻿ကုန္ပစၥည္းမ်ား</a>
             </li>
 
             <li>
-                <a href="{{route('user-manager')}}"><i class="fa fa-fw fa-users"></i> User Manager</a>
+                <a href="{{route('user-manager')}}"><i class="fa fa-fw fa-users"></i> ၀န္ထမ္းမ်ားစီမံရန္</a>
             </li>
 
+
             <li>
-                <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-database"></i> Content Manager <i class="fa fa-fw fa-caret-down"></i></a>
-                <ul id="demo" class="collapse">
-                    <li>
-                        <a href="{{route('contents')}}"><i class="fa fa-dashcube"></i> Contents</a>
-                    </li>
-                    <li>
-                        <a href="{{route('categories')}}"><i class="fa fa-table"></i> Categories</a>
-                    </li>
-                </ul>
+                <a href="#"><i class="fa fa-shopping-cart"></i> Orders</a>
             </li>
-            <li>
-                <a href="{{route('orders')}}"><i class="fa fa-shopping-cart"></i> Orders</a>
-            </li>
-            <li><a href="{{route('audit')}}"><i class="fa fa-calendar-check-o"></i> Audit</a></li>
+            <li><a href="#"><i class="fa fa-calendar-check-o"></i> Audit</a></li>
 
         </ul>
     </div>

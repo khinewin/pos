@@ -2,7 +2,7 @@
 
 @section('admin_title')
 
-    User Manager | Coffee Lover
+    ၀န္ထမ္းမ်ားစီမံရန္ | Boss Store
 
 @stop
 
@@ -16,13 +16,13 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        <a href="{{route('user-manager')}}">User Manager</a>
+                        <a href="{{route('user-manager')}}">၀န္ထမ္းမ်ားစီမံရန္</a>
                     </h1>
                     <ol class="breadcrumb">
                         <li class="active">
-                            <a href="{{route('user-manager')}}"><i class="fa fa-users"></i> User Manager</a>
+                            <a href="{{route('user-manager')}}"><i class="fa fa-users"></i> ၀န္ထမ္းမ်ားစီမံရန္</a>
                         </li>
-                        <a href="{{route('register')}}" class="pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Add User</a>
+                        <a href="{{route('register')}}" class="pull-right"><span class="glyphicon glyphicon-plus-sign"></span> ၀န္ထမ္းအသစ္ခန္႕အပ္ရန္</a>
 
                     </ol>
                 </div>
@@ -38,14 +38,11 @@
                         <table class="table table-hover">
                             <thead>
                             <tr>
-                                <th>User Name</th>
-                                <th>Email</th>
-                                <th>Account Role</th>
-                                <th>Active Status</th>
-                                <th>Last Login</th>
-                                <th>Action</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
+                                <th>အမည္</th>
+                                <th>အီးေမးလိပ္စာ</th>
+                                <th>ရာထူး</th>
+                                <th>စီမံရန္</th>
+                                <th>ဖ်က္ရန္</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -53,11 +50,9 @@
                                 <tr>
                                     <td>{{$user->user_name}}</td>
                                     <td>{{$user->email}}</td>
-                                    <td>@if($user->hasRole('Administrator')) Administrator @elseif($user->hasRole('Manager')) Manager @elseif($user->hasRole('Casher')) Casher @else Waiter @endif</td>
-                                    <td>@if($user->active) <i class="fa fa-circle-o  text-success"> Online</i> <span class="badge">{{$user->active_ip}}</span> @else <i class="fa fa-circle-o text-danger"> Offline</i>  @endif</td>
-                                    <td>{{date('d/m/Y h:i A', strtotime($user->last_login))}} <span class="badge">{{$user->last_login_ip}}</span></td>
-                                    <td><a href="{{route('force-logout',['user_name'=>$user->user_name])}}"><i class="fa fa-sign-out"></i> Force Logout</a></td>
-                                    <td><a href="{{route('edit-user',['user_name'=>$user->user_name])}}"> <i class="fa fa-edit"></i></a></td>
+                                    <td>@if($user->hasRole('Manager')) မန္ေနဂ်ာ @elseif($user->hasRole('Stock')) စာရင္းကိုင္ @elseif($user->hasRole('Sales')) အေရာင္းစာေရး @else ရာထူးခန္႕အပ္ရန္က်န္ရွိ @endif</td>
+
+                                    <td><a href="{{route('edit-user',['slug'=>$user->slug])}}"> <i class="fa fa-edit"></i></a></td>
                                     <td class="text-danger"><div data-toggle="modal" data-target="#{{$user->user_name}}"><i class="fa fa-trash"></i></div></td>
 
                                 </tr>
@@ -73,7 +68,7 @@
                                             <div class="modal-body">
                                                 <p class="text-danger">This process will delete permanently user account name "<strong>{{$user->user_name}}</strong>" from your app.</p>
                                             </div>
-                                            <form method="post" action="{{route('delete-user')}}">
+                                            <form method="post" action="#">
                                                 <input type="hidden" name="user_name" id="user_name" value="{{$user->user_name}}">
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Calcel</button>

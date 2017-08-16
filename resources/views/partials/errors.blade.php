@@ -2,7 +2,7 @@
 
 @section('admin_title')
 
-    Access Denied | Coffee Lover
+    ၀င္ခြင့္တားျမစ္ထားသည္ | Boss Store
 
 @stop
 
@@ -16,11 +16,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header text-danger">
-                        Access Denied
+                        ၀င္ခြင့္တားျဖစ္ထားသည္။
                     </h1>
                     <ol class="breadcrumb">
                         <li class="active text-danger">
-                            <i class="fa fa-warning"></i> Access Denied
+                            <i class="fa fa-warning"></i> ၀င္ခြင့္တားျမစ္ထားသည္။
                         </li>
                     </ol>
                 </div>
@@ -31,8 +31,8 @@
 
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <div class="alert alert-danger">
-                        <span class="glyphicon glyphicon-alert"></span> You don't have permission to access this page.
+                    <div class="alert alert-danger text-center">
+                        <span class="glyphicon glyphicon-alert"></span> ယခု ၀န္ထမ္းသည္ ၀င္ခြင့္မရွိသျဖင့္ တားျမစ္ထားသည္။
                     </div>
 
                 </div>

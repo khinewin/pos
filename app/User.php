@@ -11,8 +11,11 @@ class User extends Authenticatable
     use \Illuminate\Auth\Authenticatable;
     use Notifiable;
     use HasRoles;
-    public function order(){
-        return $this->hasMany('App\Order');
+    public function product(){
+        return $this->hasMany('App\Product');
+    }
+    public function sale(){
+        return $this->hasMany('App\Sale');
     }
 
     /**
