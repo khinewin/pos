@@ -49,6 +49,34 @@ Route::group(['middleware'=>'auth'],function (){
             'uses'=>'SalesController@getSalesList',
             'as'=>'sales-list'
         ]);
+        Route::get('/add-to-cart',[
+            'uses'=>'SalesController@getAddToCart',
+            'as'=>'add-to-cart'
+        ]);
+        Route::get('/cart-info',[
+            'uses'=>'SalesController@getCartInfo',
+            'as'=>'cart-info'
+        ]);
+        Route::get('/pre-cart',[
+            'uses'=>'SalesController@getPreCart',
+            'as'=>'pre-cart'
+        ]);
+        Route::get('/cart',[
+            'uses'=>'SalesController@getCart',
+            'as'=>'cart'
+        ]);
+        Route::get('/reduce-cart',[
+            'uses'=>'SalesController@getReduceCart',
+            'as'=>'reduce-cart'
+        ]);
+        Route::get('/increase-cart',[
+            'uses'=>'SalesController@getIncreaseCart',
+            'as'=>'increase-cart'
+        ]);
+        Route::get('/clear-cart',[
+            'uses'=>'SalesController@getClearCart',
+            'as'=>'clear-cart'
+        ]);
     });
 
     Route::group(['middleware'=>'myRole:Stock|Manager'],function () {
@@ -71,10 +99,11 @@ Route::group(['middleware'=>'auth'],function (){
             'uses' => 'ProductController@postNewProduct',
             'as' => 'new-product'
         ]);
-        Route::get('/product-by-cat/{cat_id}', [
+        Route::get('/product-by-cat', [
             'uses' => 'ProductController@getProductByCat',
             'as' => 'product-by-cat'
         ]);
+
 
     });
 

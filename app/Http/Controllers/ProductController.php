@@ -49,12 +49,14 @@ class ProductController extends Controller
 
         return redirect()->back()->with('info','﻿ကုန္ပစၥည္းအသစ္ထည့္သြင္းျခင္းေအာင္ျမင္ပါသည္။');
     }
-    public function getProductByCat($cat_id){
+    public function getProductByCat(Request $request){
+        $cat_id=$request['cat_id'];
         $pds=Product::Where('cat_id', $cat_id)->paginate('20');
         if(count($pds)<1){
             return redirect()->back()->with('err', 'ကုန္ပစၥည္းမ်ားထည့္သြင္းထားျခင္းမရွိေသးပါ။');
         }else {
-            return view('products.product-cat')->with(['pds' => $pds])->with(['cat_id' => $cat_id]);
+            $cat=Cat::where('id', $cat_id)->first();
+            return view('products.product-cat')->with(['pds' => $pds])->with(['cat' => $cat]);
         }
     }
 }

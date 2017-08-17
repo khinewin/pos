@@ -40,6 +40,7 @@
                                     <th>ID</th>
                                     <th>﻿ကုန္ပစၥည္းအမည္</th>
                                     <th>ေစ်းႏႈန္း</th>
+                                    <th>က်န္ရွိစာရင္း</th>
                                     <th>ေရာင္းရန္မွတ္ထားမည္</th>
 
                                 </tr>
@@ -49,7 +50,8 @@
                                         <td>{{$pd->p_slug}}</td>
                                         <td>{{$pd->p_name}}</td>
                                         <td>{{$pd->p_price}} က်ပ္</td>
-                                        <td><a href="#"><i class="fa fa-plus-circle"></i><i class="fa fa-shopping-cart"></i></a></td>
+                                        <td>{{$pd->amount}} {{$pd->amount_type}}</td>
+                                        <td><div class="btn btn-sm btn-primary" id="btnAddToCart" slug={{$pd->p_slug}}><i class="fa fa-plus-circle"></i><i class="fa fa-shopping-cart"></i></div></td>
 
                                     </tr>
                                 @endforeach

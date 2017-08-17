@@ -40,7 +40,7 @@
                                     <div class="panel panel-primary">
                                         <div class="panel-heading">
                                             <div class="row">
-                                                <div class="col-xs-3">
+                                                <div class="col-xs-12">
 
                                                     <div>{{$cat->cat_name}}</div>
                                                 </div>

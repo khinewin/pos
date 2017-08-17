@@ -2,7 +2,7 @@
 
 @section('admin_title')
 
-   @foreach($pds as $pd) {{$pd->cat->cat_name}} @endforeach | Boss Store
+  {{$cat->cat_name}} | Boss Store
 
 @stop
 
@@ -16,11 +16,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        <a href="{{route('product-by-cat',['cat_id'=>$pd->cat_id])}}"> @foreach($pds as $pd) {{$pd->cat->cat_name}} @endforeach</a>
+                        <a href="{{route('product-by-cat',['cat_id'=>$cat->id])}}"> {{$cat->cat_name}} </a>
                     </h1>
                     <ol class="breadcrumb">
                         <li class="active">
-                            <a href="{{route('product-by-cat',['cat_id'=>$pd->cat_id])}}"><i class="fa fa-shopping-bag"></i> @foreach($pds as $pd) {{$pd->cat->cat_name}} @endforeach</a>
+                            <a href="{{route('product-by-cat',['cat_id'=>$cat->id])}}"><i class="fa fa-shopping-bag"></i> {{$cat->cat_name}} </a>
                         </li>
                     </ol>
                 </div>
