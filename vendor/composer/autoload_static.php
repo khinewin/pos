@@ -276,6 +276,7 @@ class ComposerStaticInit2438e4ebe94fa901416d3cdd56326e4f
     );
 
     public static $classMap = array (
+        'App\\Cart' => __DIR__ . '/../..' . '/app/Cart.php',
         'App\\Cat' => __DIR__ . '/../..' . '/app/Cat.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
@@ -296,6 +297,7 @@ class ComposerStaticInit2438e4ebe94fa901416d3cdd56326e4f
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Http\\Middleware\\myRole' => __DIR__ . '/../..' . '/app/Http/Middleware/myRole.php',
+        'App\\Onsale' => __DIR__ . '/../..' . '/app/Onsale.php',
         'App\\Product' => __DIR__ . '/../..' . '/app/Product.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -308,6 +310,7 @@ class ComposerStaticInit2438e4ebe94fa901416d3cdd56326e4f
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
         'CreateCatsTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_16_111607_create_cats_table.php',
+        'CreateOnsalesTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_18_090011_create_onsales_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreatePermissionTables' => __DIR__ . '/../..' . '/database/migrations/2017_07_27_174516_create_permission_tables.php',
         'CreateProductsTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_16_113826_create_products_table.php',

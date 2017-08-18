@@ -24,6 +24,8 @@ $(function () {
            success:function (msg) {
                 cartInfo();
                 preCart();
+                $("#stockInfo").html(msg);
+
            }
        });
     });
@@ -60,6 +62,7 @@ $(function () {
             success:function (msg) {
                 cartInfo();
                 preCart();
+                $("#stockInfo").html(msg);
 
             }
         });
@@ -70,7 +73,9 @@ $(function () {
             url :'clear-cart',
             success:function (msg) {
                if(msg==='clear'){
-                   window.location.reload('/cart');
+                   cartInfo();
+                   preCart();
+
                }
             }
         });

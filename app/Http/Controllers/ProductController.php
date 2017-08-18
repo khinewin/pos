@@ -41,6 +41,7 @@ class ProductController extends Controller
         $pd->cat_id=$request['cat_id'];
         $pd->p_slug=uniqid();
         $pd->amount=$request['amount'];
+        $pd->backup_amount=$request['amount'];
         $pd->amount_type=$request['amount_type'];
         $pd->user_id=Auth::User()->id;
         $pd->save();

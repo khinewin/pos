@@ -77,6 +77,10 @@ Route::group(['middleware'=>'auth'],function (){
             'uses'=>'SalesController@getClearCart',
             'as'=>'clear-cart'
         ]);
+        Route::post('/confirm-sale',[
+            'uses'=>'SalesController@postConfirmSale',
+            'as'=>'confirm-sale'
+        ]);
     });
 
     Route::group(['middleware'=>'myRole:Stock|Manager'],function () {

@@ -1,5 +1,4 @@
 @if(Session::has('cart'))
-
 @foreach($pds as $pd)
     <tr>
         <td>{{$pd['item']['p_name']}}</td>

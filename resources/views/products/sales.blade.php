@@ -30,10 +30,11 @@
 
 
             <div class="row">
-                <div class="container-fluid">@if(Session('err')) <div class="alert alert-danger">{{Session('err')}}@endif</div>
+                <div class="container-fluid">@if(Session('err')) <div class="alert alert-danger"><i class="fa fa-warning"></i> {{Session('err')}}@endif</div>
                     <div class="container-fluid">@if(Session('info')) <div class="alert alert-success">{{Session('info')}}</div> @endif</div>
                     <div class="col-md-12">
                         <div class="table-responsive">
+                            <span id="stockInfo"></span>
                             <table class="table table-hover" id="sales">
                                 <thead>
                                 <tr>
@@ -51,7 +52,7 @@
                                         <td>{{$pd->p_name}}</td>
                                         <td>{{$pd->p_price}} က်ပ္</td>
                                         <td>{{$pd->amount}} {{$pd->amount_type}}</td>
-                                        <td><div class="btn btn-sm btn-primary" id="btnAddToCart" slug={{$pd->p_slug}}><i class="fa fa-plus-circle"></i><i class="fa fa-shopping-cart"></i></div></td>
+                                        <td class="text-center"><div class="btn btn-sm btn-primary" id="btnAddToCart" slug={{$pd->p_slug}}><i class="fa fa-plus-circle"></i><i class="fa fa-shopping-cart"></i></div></td>
 
                                     </tr>
                                 @endforeach

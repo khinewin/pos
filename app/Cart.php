@@ -28,11 +28,16 @@ class Cart
                 $storeItem=$this->items[$id];
             }
         }
-        $storeItem['qty']++;
-        $storeItem['price'] =$item->p_price * $storeItem['qty'];
-        $this->items[$id]=$storeItem;
-        $this->totalQty++;
-        $this->totalPrice += $item->p_price * $storeItem['qty'];
+        if($storeItem['qty'] >= $storeItem['qty'] + $item->amount){
+            echo "<div class='alert alert-danger text-center'> <i class='fa fa-warning'></i> လက္က်န္ကုန္ပစၥည္းအေရအတြက္မလံုေလာက္ေသာပါ။</div>";
+        }else {
+            $storeItem['qty']++;
+            $storeItem['price'] =$item->p_price * $storeItem['qty'];
+            $this->items[$id]=$storeItem;
+            $this->totalQty++;
+            $this->totalPrice += $item->p_price;
+        }
+
     }
     public function reduce($id){
         $this->items[$id]['qty']--;
@@ -42,6 +47,7 @@ class Cart
         if($this->items[$id]['qty'] <=0 ){
             unset($this->items[$id]);
         }
+
     }
     public function increase($id){
         $this->items[$id]['qty']++;
